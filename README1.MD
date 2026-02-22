@@ -7,6 +7,7 @@ graph TB
     classDef container fill:#fffde7,stroke:#c0ca33,stroke-width:2px;
 
     %% --- 主容器 ---
+    subgraph MainContainer ["臨床流程與採樣"]
         direction TB
 
         %% --- 時間軸流程 (藍色區塊) ---
