@@ -14,7 +14,8 @@ graph TB
     style Goal fill:#fff,stroke:#333,stroke-width:1px
 
     %% --- 第1部分：臨床流程與採樣 SOP (縱向軸) ---
-    subgraph 臨床時序與樣本採集 [ (1) 臨床流程與採樣 SOP 建立 ]
+    %% 【修正點】在標題前後加上了雙引號 ""
+    subgraph 臨床時序與樣本採集 ["(1) 臨床流程與採樣 SOP 建立"]
         direction LR
         T1(基線 Baseline):::timeline --> T2(NIC Cycle 1 後):::timeline --> T3(術前 Pre-op):::timeline --> T4(手術/術後 Post-op):::timeline --> T5(追蹤期 Follow-up):::timeline
 
@@ -39,12 +40,14 @@ graph TB
         direction TB
 
         %% 液態切片分析分支
-        subgraph Liquid_Biopsy [ 液態切片分析 (血液樣本) ]
+        %% 【修正點】加上雙引號
+        subgraph Liquid_Biopsy ["液態切片分析 (血液樣本)"]
             direction TB
             B_Sample(血液樣本集合)
 
             %% (2) ctDNA 動力學
-            subgraph ctDNA_Workflow [ (2) ctDNA 檢測平台與動力學 ]
+            %% 【修正點】加上雙引號
+            subgraph ctDNA_Workflow ["(2) ctDNA 檢測平台與動力學"]
                 ctDNA_Dual[雙軌流程: HPV-ctDNA + Tumor-informed ctDNA]:::lab_liquid
                 ctDNA_Kinetics[定義動力學指標:<br/>清除率, 下降斜率, 半衰期, 反彈]:::lab_liquid
                 QC_LoD[建立 LoD/LoQ 與批次一致性監控]:::lab_liquid
@@ -52,7 +55,8 @@ graph TB
             end
 
             %% (4) 周邊免疫譜
-            subgraph Immune_Profiling [ (4) 周邊免疫譜與細胞激素面板 ]
+            %% 【修正點】加上雙引號
+            subgraph Immune_Profiling ["(4) 周邊免疫譜與細胞激素面板"]
                 FlowCyto[多色流式細胞儀:<br/>追蹤免疫細胞族群比例變化]:::lab_liquid
                 Cytokine[搭配細胞激素面板]:::lab_liquid
                 ImmuneScore[建立系統性免疫活化讀數]:::lab_liquid
@@ -64,12 +68,14 @@ graph TB
         end
 
         %% 組織分析分支
-        subgraph Tissue_Analysis [ 組織分析 (組織樣本) ]
+        %% 【修正點】加上雙引號
+        subgraph Tissue_Analysis ["組織分析 (組織樣本)"]
             direction TB
             T_Sample(組織/切片樣本集合)
 
             %% (3) TME 重塑定量
-            subgraph TME_Profiling [ (3) 組織免疫指標與 TME 重塑定量 ]
+            %% 【修正點】加上雙引號
+            subgraph TME_Profiling ["(3) 組織免疫指標與 TME 重塑定量"]
                 IHC_Multi[IHC/Multiplex染色:<br/>CD8, FOXP3, PD-L1/PD-1, IDO 等]:::lab_tissue
                 Scoring[建立評分/定量一致性]:::lab_tissue
                 HotCold[建立「冷轉熱」指標:<br/>CD8/FOXP3 比值與 PD-L1 動態變化]:::lab_tissue
@@ -78,7 +84,8 @@ graph TB
             end
 
             %% (5) 探索模組
-            subgraph Exploratory [ (5) 探索模組: 單細胞/空間層級解析 ]
+            %% 【修正點】加上雙引號
+            subgraph Exploratory ["(5) 探索模組: 單細胞/空間層級解析"]
                 SelectCases[針對代表性極端個案]:::lab_tissue
                 scRNA_ST[進行 scRNA / Spatial Transcriptomics 分析]:::lab_tissue
                 FeatureExtract[萃取抗性特徵]:::lab_tissue
@@ -94,7 +101,8 @@ graph TB
     end
 
     %% --- 第6部分：整合與建模 (匯聚點) ---
-    subgraph Integration_Modeling [ (6) 多模態資料整合與預測模型建立 ]
+    %% 【修正點】加上雙引號
+    subgraph Integration_Modeling ["(6) 多模態資料整合與預測模型建立"]
         DataPool[多模態資料池]:::integration
         Modeling[建立預測模型 & 驗證]:::integration
         Feedback[抗性特徵回填模型 (來自探索模組)]:::integration
