@@ -27,7 +27,7 @@ graph TB
     %% --- 主標題 ---
     %% 【修正】將 fill:none 改為白色，避免選取不到物件的錯誤
     Title["(1) 臨床流程與樣本採集標準作業 (SOP) 建立"]:::titleBox
-    classDef titleBox fill:#ffffff,stroke:none,color:#333;
+    classDef titleBox fill:#ffffff,stroke:none,font-size:18px,color:#333;
 
     %% --- 藍色時間軸節點 (右側) ---
     T1("基線<br/>Baseline"):::timeline
