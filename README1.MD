@@ -1,3 +1,4 @@
+```mermaid
 graph TB
     %% --- 定義樣式 ---
     classDef timeline fill:#e1f5fe,stroke:#0288d1,stroke-width:2px,color:#01579b,font-weight:bold,rx:8,ry:8;
@@ -29,3 +30,4 @@ graph TB
     end
     %% 應用最外層容器樣式
     class MainContainer container
+```
