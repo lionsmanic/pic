@@ -1,3 +1,4 @@
+```mermaid
 graph LR
     %% --- 定義樣式 ---
     %% timeline: 更清爽的藍色，更大的圓角
@@ -65,3 +66,4 @@ graph LR
     style TimelineFlow fill:none,stroke:none
     style SamplingActions fill:none,stroke:none
     style SOP_Section fill:none,stroke:none
+```
