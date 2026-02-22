@@ -1,3 +1,4 @@
+```mermaid
 graph TB
     %% 定義樣式
     classDef timeline fill:#e1f5fe,stroke:#0288d1,stroke-width:2px,color:#01579b,font-weight:bold;
@@ -116,3 +117,4 @@ graph TB
     FeatureExtract --> DataPool
 
     Modeling ==> FinalOutcome
+```
