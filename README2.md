@@ -14,9 +14,7 @@ graph TB
     classDef sop fill:#e8f5e9,stroke:#2e7d32,stroke-width:2px,rx:8,ry:8,color:#1b5e20;
     
     %% linkStyle: 定義連接線的樣式
-    %% 0-4 是主時間軸的粗藍線
     linkStyle 0,1,2,3,4 stroke:#1565c0,stroke-width:4px,fill:none;
-    %% 5-10 是採樣的紅色虛線
     linkStyle 5,6,7,8,9,10 stroke:#c62828,stroke-width:2px,stroke-dasharray: 5 5,fill:none;
 
     %% =====================================================================================
@@ -36,7 +34,6 @@ graph TB
 
     %% --- 紅色採樣動作節點 (左側) ---
     S1("fa:fa-tint fa:fa-microscope 採血 &<br/>組織切片"):::sampling
-    %% 注意：根據您的最終圖像，第二個節點也是"採血&組織切片"
     S2("fa:fa-tint fa:fa-microscope 採血 &<br/>組織切片"):::sampling
     S3("fa:fa-tint 採血"):::sampling
     S4("fa:fa-tint fa:fa-microscope 採血 &<br/>潛在採檢"):::sampling
@@ -44,7 +41,8 @@ graph TB
     S6("fa:fa-tint fa:fa-tint fa:fa-tint 系列採血"):::sampling
 
     %% --- 綠色 SOP 基礎節點 (最左側) ---
-    SOP_Node["fa:fa-file-medical 建立標準作業流程 (SOP) 基礎<br/><hr/><span style='font-size:90%;'>涵蓋：採血 / 組織 / 運送 / 病理處理流程<br/>以及 倫理 / IRB / 匿名化管理機制</span>"]:::sop
+    %% 【修正說明】移除了導致 GitHub 報錯的 <hr/> 和 <span style=...> HTML 標籤
+    SOP_Node["fa:fa-file-medical 建立標準作業流程 (SOP) 基礎<br/>(涵蓋：採血 / 組織 / 運送 / 病理處理流程<br/>以及 倫理 / IRB / 匿名化管理機制)"]:::sop
 
     %% =====================================================================================
     %% --- 流程連接 ---
@@ -53,7 +51,7 @@ graph TB
     %% 1. 主時間軸流程 (粗藍線)
     T1 --> T2 --> T3 --> T4 --> T5
 
-    %% 2. 時間點對應採樣動作 (紅色虛線，使用不同方向的連接符號來製造曲線感)
+    %% 2. 時間點對應採樣動作 (紅色虛線)
     T1 -.-|> S1
     T2 -.-|> S2
     T3 -.-|> S3
