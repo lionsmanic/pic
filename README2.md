@@ -1,7 +1,7 @@
 ```mermaid
 graph TB
     %% =====================================================================================
-    %% --- BioRender 風格樣式定義 ---
+    %% --- BioRender 風格樣式定義 (修正版) ---
     %% =====================================================================================
     
     %% timeline: 時間軸節點 - 清透的科學藍，大圓角，粗邊框強調，深藍色文字
@@ -13,12 +13,12 @@ graph TB
     %% sop: 基礎文件節點 - 代表規範的淡綠色，深綠色文字
     classDef sop fill:#e8f5e9,stroke:#2e7d32,stroke-width:2px,rx:8,ry:8,color:#1b5e20;
     
-    %% linkStyle: 定義連接線的樣式
+    %% linkStyle: 定義連接線的樣式，分別設定藍色實線和紅色虛線
     linkStyle 0,1,2,3,4 stroke:#1565c0,stroke-width:4px,fill:none;
     linkStyle 5,6,7,8,9,10 stroke:#c62828,stroke-width:2px,stroke-dasharray: 5 5,fill:none;
 
     %% =====================================================================================
-    %% --- 節點定義 (加入 Font Awesome 圖示) ---
+    %% --- 節點定義 (已移除導致 GitHub 報錯的 HTML 樣式) ---
     %% =====================================================================================
 
     %% --- 主標題 ---
@@ -26,6 +26,7 @@ graph TB
     classDef titleBox fill:none,stroke:none,font-size:18px,font-weight:bold,color:#333;
 
     %% --- 藍色時間軸節點 (右側) ---
+    %% 使用 Font Awesome 圖示 (需要 GitHub 介面支援顯示)
     T1("fa:fa-tint 基線<br/>Baseline"):::timeline
     T2("fa:fa-pills NIC Cycle 1 後<br/>Post-C1"):::timeline
     T3("fa:fa-user-injured 術前<br/>Pre-op"):::timeline
@@ -41,7 +42,7 @@ graph TB
     S6("fa:fa-tint fa:fa-tint fa:fa-tint 系列採血"):::sampling
 
     %% --- 綠色 SOP 基礎節點 (最左側) ---
-    %% 【修正說明】移除了導致 GitHub 報錯的 <hr/> 和 <span style=...> HTML 標籤
+    %% 【關鍵修正】移除了 <hr/> 和 <span style=...>，改用括號替代
     SOP_Node["fa:fa-file-medical 建立標準作業流程 (SOP) 基礎<br/>(涵蓋：採血 / 組織 / 運送 / 病理處理流程<br/>以及 倫理 / IRB / 匿名化管理機制)"]:::sop
 
     %% =====================================================================================
@@ -59,6 +60,6 @@ graph TB
     T4 -.-|> S5
     T5 -.-|> S6
 
-    %% 3. 佈局輔助 (使用隱藏連接微調位置，讓SOP在左側)
+    %% 3. 佈局輔助 (使用隱藏連接微調位置，讓SOP穩定在左側)
     SOP_Node ~~~ S1
 ```
