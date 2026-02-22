@@ -1,7 +1,7 @@
 ```mermaid
 graph TB
     %% =====================================================================================
-    %% --- BioRender 風格樣式定義 (修正版) ---
+    %% --- BioRender 風格樣式定義 (GitHub 穩定版) ---
     %% =====================================================================================
     
     %% timeline: 時間軸節點 - 清透的科學藍，大圓角，粗邊框強調，深藍色文字
@@ -18,7 +18,7 @@ graph TB
     linkStyle 5,6,7,8,9,10 stroke:#c62828,stroke-width:2px,stroke-dasharray: 5 5,fill:none;
 
     %% =====================================================================================
-    %% --- 節點定義 (已移除導致 GitHub 報錯的 HTML 樣式) ---
+    %% --- 節點定義 (已移除導致 GitHub 崩潰的 Font Awesome 代碼) ---
     %% =====================================================================================
 
     %% --- 主標題 ---
@@ -26,24 +26,25 @@ graph TB
     classDef titleBox fill:none,stroke:none,font-size:18px,font-weight:bold,color:#333;
 
     %% --- 藍色時間軸節點 (右側) ---
-    %% 使用 Font Awesome 圖示 (需要 GitHub 介面支援顯示)
-    T1("fa:fa-tint 基線<br/>Baseline"):::timeline
-    T2("fa:fa-pills NIC Cycle 1 後<br/>Post-C1"):::timeline
-    T3("fa:fa-user-injured 術前<br/>Pre-op"):::timeline
-    T4("fa:fa-scalpel 手術/術後<br/>Post-op"):::timeline
-    T5("fa:fa-calendar-alt 追蹤期<br/>Follow-up"):::timeline
+    %% 【修正】移除了 fa:fa-xxx 代碼
+    T1("基線<br/>Baseline"):::timeline
+    T2("NIC Cycle 1 後<br/>Post-C1"):::timeline
+    T3("術前<br/>Pre-op"):::timeline
+    T4("手術/術後<br/>Post-op"):::timeline
+    T5("追蹤期<br/>Follow-up"):::timeline
 
     %% --- 紅色採樣動作節點 (左側) ---
-    S1("fa:fa-tint fa:fa-microscope 採血 &<br/>組織切片"):::sampling
-    S2("fa:fa-tint fa:fa-microscope 採血 &<br/>組織切片"):::sampling
-    S3("fa:fa-tint 採血"):::sampling
-    S4("fa:fa-tint fa:fa-microscope 採血 &<br/>潛在採檢"):::sampling
-    S5("fa:fa-tint fa:fa-scalpel 採血 &<br/>手術檢體"):::sampling
-    S6("fa:fa-tint fa:fa-tint fa:fa-tint 系列採血"):::sampling
+    %% 【修正】移除了 fa:fa-xxx 代碼
+    S1("採血 &<br/>組織切片"):::sampling
+    S2("採血 &<br/>組織切片"):::sampling
+    S3("採血"):::sampling
+    S4("採血 &<br/>潛在採檢"):::sampling
+    S5("採血 &<br/>手術檢體"):::sampling
+    S6("系列採血"):::sampling
 
     %% --- 綠色 SOP 基礎節點 (最左側) ---
-    %% 【關鍵修正】移除了 <hr/> 和 <span style=...>，改用括號替代
-    SOP_Node["fa:fa-file-medical 建立標準作業流程 (SOP) 基礎<br/>(涵蓋：採血 / 組織 / 運送 / 病理處理流程<br/>以及 倫理 / IRB / 匿名化管理機制)"]:::sop
+    %% 【修正】移除了 fa:fa-xxx 代碼
+    SOP_Node["建立標準作業流程 (SOP) 基礎<br/>(涵蓋：採血 / 組織 / 運送 / 病理處理流程<br/>以及 倫理 / IRB / 匿名化管理機制)"]:::sop
 
     %% =====================================================================================
     %% --- 流程連接 ---
